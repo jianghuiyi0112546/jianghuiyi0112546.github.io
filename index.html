@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品技术部跨部门沟通协作指南 (优化版)</title>
+    <title>产品技术部跨部门沟通协作指南 (最终版)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -36,9 +36,31 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
-        .tag-green { background-color: #dcfce7; color: #166534; }
-        .tag-yellow { background-color: #fef9c3; color: #854d0e; }
+        .tag-pro { background-color: #dcfce7; color: #065f46; } /* 精通 - Green */
+        .tag-proficient { background-color: #e0f2fe; color: #075985; } /* 掌握 - Blue */
+        .tag-familiar { background-color: #fef9c3; color: #854d0e; } /* 熟悉 - Yellow */
         .highlight-red { color: #ef4444; font-weight: bold; }
+        .highlight-blue { color: #2563eb; font-weight: bold; }
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .table-responsive table th, .table-responsive table td {
+            white-space: nowrap;
+            padding: 12px 16px;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease;
+        }
+        /* Style for the specific table to allow text wrapping */
+        .table-wrap-text th, .table-wrap-text td {
+            white-space: normal;
+        }
     </style>
 </head>
 <body>
@@ -47,254 +69,439 @@
         <!-- Header -->
         <header class="text-center mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">产品技术部 跨部门沟通协作指南</h1>
-            <p class="text-lg text-gray-500 mt-2">2025年7月25日</p>
+            <p class="text-lg text-gray-500 mt-2">2025年8月6日1.0版</p>
         </header>
 
         <!-- Tab Navigation -->
         <div class="mb-8 border-b border-gray-200">
             <nav class="flex flex-nowrap -mb-px justify-start space-x-4 md:space-x-8 overflow-x-auto pb-2" id="tab-nav">
-                <button class="tab-btn active" data-tab="tab1">部门职责</button>
-                <button class="tab-btn" data-tab="tab2">经验与能力边界</button>
-                <button class="tab-btn" data-tab="tab3">关于测试</button>
-                <button class="tab-btn" data-tab="tab4">拿样数量</button>
-                <button class="tab-btn" data-tab="tab5">高效协作</button>
-                <button class="tab-btn" data-tab="tab6">其他答疑</button>
+                <button class="tab-btn active" data-tab="tab1">职责与经验</button>
+                <button class="tab-btn" data-tab="tab2">关于需求</button>
+                <button class="tab-btn" data-tab="tab3">功能&相容性测试</button>
+                <button class="tab-btn" data-tab="tab4">买样/寻样/拿样</button>
+                <button class="tab-btn" data-tab="tab5">其他答疑</button>
             </nav>
         </div>
 
         <!-- Tab Content -->
         <main id="tab-content">
-            <!-- Tab 1: 部门职责 -->
+            <!-- Tab 1: 职责与经验 -->
             <div id="tab1" class="tab-pane">
-                <div class="card p-6 md:p-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                <div class="space-y-8">
+                    <!-- 部门职责 -->
+                    <div class="card p-6 md:p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">部门职责</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
+                                <div><h3 class="font-bold text-lg text-orange-600 mb-1">产品研发</h3><p class="text-gray-700">目前以UV类为主。</p></div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-lg text-orange-600 mb-1">产品研发</h3>
-                                <p class="text-gray-700">目前已UV类为主。</p>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg></div>
+                                <div><h3 class="font-bold text-lg text-orange-600 mb-1">创新开发</h3><p class="text-gray-700">针对新材料、新功能、新场景、新需求进行研究、探索、交付与符合投产比效益的落地。</p></div>
                             </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg></div>
+                                <div><h3 class="font-bold text-lg text-orange-600 mb-1">产品测试</h3><p class="text-gray-700">我们会针对“新品开发+配方储备+配方升级”等目标，提供测试服务。</p></div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-lg text-orange-600 mb-1">创新开发</h3>
-                                <p class="text-gray-700">针对新功能、新场景、新需求的料体进行研究和探索。</p>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879a3 3 0 014.242 0L20 18M5 12h.01M19 12h.01M12 12h.01M12 5h.01M12 19h.01M5 19h.01M5 5h.01M19 5h.01"></path></svg></div>
+                                <div><h3 class="font-bold text-lg text-orange-600 mb-1">产品评估</h3><p class="text-gray-700">针对各种产品疑问/异常/机会/风险等需求，进行技术评估和支持。</p></div>
                             </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg text-orange-600 mb-1">产品测试</h3>
-                                <p class="text-gray-700">我们会针对“新品开发+配方储备+配方升级”等目标，提供测试服务。</p>
+                            <div class="flex items-start space-x-4 md:col-span-2">
+                                <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg></div>
+                                <div><h3 class="font-bold text-lg text-orange-600 mb-1">赋能组织</h3><p class="text-gray-700">包括积累与产品有关的组织经验/资产，我们提供可能是全行业最完整、清晰度的产品知识库。</p></div>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879a3 3 0 014.242 0L20 18M5 12h.01M19 12h.01M12 12h.01M12 5h.01M12 19h.01M5 19h.01M5 5h.01M19 5h.01"></path></svg>
+                    </div>
+                    <!-- 经验与能力边界 -->
+                    <div class="card p-4 md:p-6 table-responsive">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">经验与能力边界</h2>
+                        <table class="w-full max-w-7xl text-sm text-left text-gray-600">
+                            <thead class="text-xs text-gray-700 uppercase bg-orange-50">
+                                <tr>
+                                    <th scope="col" class="py-3 px-4 rounded-l-lg">大品类</th><th scope="col" class="py-3 px-4">小品类</th><th scope="col" class="py-3 px-4">我们的能力程度</th><th scope="col" class="py-3 px-4">关于底层逻辑</th><th scope="col" class="py-3 px-4">关于异常原因</th><th scope="col" class="py-3 px-4">关于成本范畴</th><th scope="col" class="py-3 px-4">关于风险在哪</th><th scope="col" class="py-3 px-4">是否能提供配方样板</th><th scope="col" class="py-3 px-4 rounded-r-lg">是否有对应产品知识库</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b"><th rowspan="5" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">UV胶<br><span class='text-xs text-gray-400 font-normal'>(照灯)</span></th><td>所有有色胶类(含多种)</td><td><span class="tag tag-proficient">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以, 但只调基本色</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>底胶类</td><td><span class="tag tag-pro">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>封层类</td><td><span class="tag tag-proficient">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>水晶胶</td><td><span class="tag tag-proficient">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>其他功能胶</td><td><span class="tag tag-pro">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><th rowspan="2" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">胶水类<br><span class='text-xs text-gray-400 font-normal'>(自干)</span></th><td>DP胶</td><td><span class="tag tag-familiar">熟悉</span></td><td>✓</td><td>✓</td><td>大致✓</td><td>✓</td><td>不做, 是另一套体系</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>美甲胶水</td><td><span class="tag tag-familiar">熟悉</span></td><td>✓</td><td>✓</td><td>大致✓</td><td>✓</td><td>一套体系</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><th rowspan="2" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">粉体类</th><td>DP粉</td><td><span class="tag tag-pro">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>不做</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>水晶粉</td><td><span class="tag tag-proficient">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>不做</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><th rowspan="2" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">卸甲类</th><td>丙酮水剂类</td><td><span class="tag tag-pro">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>非丙酮水剂类</td><td><span class="tag tag-proficient">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><th rowspan="5" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">其他类</th><td>膏霜类</td><td><span class="tag tag-familiar">熟悉</span></td><td>✓</td><td>✓</td><td>大致✓</td><td>大致✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>油性指甲油</td><td><span class="tag tag-familiar">熟悉</span></td><td>✓</td><td>✓</td><td>不熟</td><td>✓</td><td>不能, 没积累</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>水性指甲油</td><td><span class="tag tag-familiar">熟悉</span></td><td>✓</td><td>✓</td><td>不熟</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>吻合剂</td><td><span class="tag tag-pro">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><td>清洁液/洗笔液</td><td><span class="tag tag-pro">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
+                                <tr class="bg-white border-b"><th class="py-4 px-4 font-medium text-gray-900 bg-gray-50"></th><td>解胶剂</td><td><span class="tag tag-familiar">熟悉</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>不做</td><td>✓</td></tr>
+                                <tr class="bg-white"><th class="py-4 px-4 font-medium text-gray-900 bg-gray-50 rounded-bl-lg"></th><td>纯护肤类</td><td><span class="tag tag-familiar">熟悉</span></td><td>看品类</td><td>看品类</td><td>看品类</td><td>看品类</td><td>做不了</td><td>✓-有部分</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: 关于需求 -->
+            <div id="tab2" class="tab-pane hidden">
+                <div class="space-y-8">
+                    <div class="card p-6 table-responsive">
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-4">需求沟通参考明细</h3>
+                        <table class="w-full text-sm text-center">
+                            <thead class="bg-orange-50">
+                                <tr>
+                                    <th class="sticky left-0 py-2 px-3 bg-orange-50 w-72 z-20 text-center" colspan="2">需求分类</th>
+                                    <th class="py-2 px-3">增色</th><th class="py-2 px-3">底胶/功能胶/磨砂封层</th><th class="py-2 px-3">色胶/拉线胶</th><th class="py-2 px-3">一步胶</th><th class="py-2 px-3">所有封层类</th><th class="py-2 px-3">所有指甲油</th><th class="py-2 px-3">水性指甲油</th><th class="py-2 px-3">防溢胶/可撕底胶</th><th class="py-2 px-3">DP底胶/封层/美甲胶水</th><th class="py-2 px-3">DP粉/水晶粉</th><th class="py-2 px-3">DP干燥剂/吻合剂</th><th class="py-2 px-3">清洁液/洗笔液等溶剂</th><th class="py-2 px-3">水晶液</th><th class="py-2 px-3">卸甲水/卸甲膏</th><th class="py-2 px-3">解胶剂</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">五感</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">闪粉/增款/特殊款</td>
+                                    <td>×</td><td>×</td><td>√-必须</td><td>√-必须</td><td>√-必须</td><td>×</td><td>×</td><td>×</td><td>/</td><td>×</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">五感</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">气味调整的机会, 是否能加香</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-必须</td><td>√-必须</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">功能</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">使用体验的优化/调整</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-必须</td><td>√-必须</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">功能</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">能不能加营养成分不出现异常, 是否会浑浊, 是否有效果</td>
+                                    <td>√-必须</td><td>√-必须</td><td>√-必须</td><td>√-必须</td><td>√-必须</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">功能</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">增加功能/能否实现现多功能</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-必须</td><td>√-必须</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">功能</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">重要的功能优化/调整整机机会</td>
+                                    <td>√-必须</td><td>√-必须</td><td>√-必须</td><td>√-必须</td><td>√-必须</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">风险</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">禁限用/可替代的实现程度和影响</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">风险</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">某些特殊性质配方, 例如非酸/非危/环保等</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">其他</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">竞对配方是否支持</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">其他</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">专利是否可实现</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="sticky left-0 border-r font-medium bg-white w-24">其他</td>
+                                    <td class="sticky border-r bg-white w-48" style="left: 96px;">各种构思&困惑解决方案</td>
+                                    <td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td><td>√-可以</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-4">举例说明，以下这些场景，都可以找我们沟通</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-orange-300">
+                                <h4 class="font-bold text-orange-600 mb-2">凡是起心动念想开发某款产品时(特别是创新类/风险类产品)</h4>
+                                <ul class="list-decimal list-inside text-gray-700 space-y-1 pl-4">
+                                    <li>想提前了解具体产品的特性/风险/开发边界及难度等；</li>
+                                    <li>围绕我们客户需求，具体是否能具体，具体是否能具体，具体到“美甲科研-研发指引-如何高效完成协作”；</li>
+                                    <li>围绕客户需求，需要了解是否有更好的产品替代方案；</li>
+                                    <li>想要了解公司内部/外聘资源是否有匹配可解决问题的专家；</li>
+                                    <li>希望我们提前输出产品专题的。</li>
+                                </ul>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-lg text-orange-600 mb-1">产品评估</h3>
-                                <p class="text-gray-700">针对需求方提供的产品疑问/异常/风险等信息，进行技术评估和支持。</p>
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-orange-300">
+                                <h4 class="font-bold text-orange-600 mb-2">准备拿样时</h4>
+                                <ul class="list-decimal list-inside text-gray-700 space-y-1 pl-4">
+                                    <li>希望我们结合需求，提供供应商选择建议；</li>
+                                    <li>针对非常规新产品、以及需要优化的产品，由于不了解材料特性/风险/功能是否能实现，使得不知道找什么供应商快速精准拿样（如果问了不该问的、不会做这类产品的供应商，很可能会暴露我们的新品计划）；</li>
+                                    <li>希望能输出有效的产品需求，让供应商工程师能真的听得懂我们的诉求，并能做到位，减少打版次数。</li>
+                                </ul>
                             </div>
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-orange-300">
+                                <h4 class="font-bold text-orange-600 mb-2">测试后，有调整需求的，想要进一步跟供应商工程师沟通时</h4>
+                                <ul class="list-decimal list-inside text-gray-700 space-y-1 pl-4">
+                                    <li>想要增减某些维度的效果、但不确定能不能实现，担心供应商/工程师推卸拒绝、甚至放弃继续打版；</li>
+                                    <li>想要知道产品不同维度间的关系、矛盾，以及取舍的逻辑，把控可实现程度；</li>
+                                    <li>想我们的工程师能直接跟供应商工程师对话，让沟通更顺利。</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-orange-300">
+                                <h4 class="font-bold text-orange-600 mb-2">假如出现质检判定不通过的产品，是否真的就不能通过，还需要怎么做（例如XX胶30天变黄，是不是就不能用？会不会太严格？）</h4>
+                                <p class="text-gray-700 pl-4">希望从产品材料本身特性，去着是产品可承受的测试边界是怎样？是正常表现，我们担心过多，还是确有风险。</p>
+                            </div>
+                             <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-orange-300">
+                                <h4 class="font-bold text-orange-600 mb-2">大货生产后</h4>
+                                <ul class="list-decimal list-inside text-gray-700 space-y-1 pl-4">
+                                    <li>针对风险类大货，需要我们跟进每批大货的质量情况；</li>
+                                    <li>假如出现供应商错错其他配方、或配方异常等问题，需确认配方是否能用，可以统一先对接我们。</li>
+                                </ul>
+                            </div>
+                             <div class="p-4 rounded-lg bg-gray-50 border-l-4 border-orange-300">
+                                <h4 class="font-bold text-orange-600 mb-2">出现多次打版存在色差/闪粉不衬的问题</h4>
+                                <p class="text-gray-700 pl-4">已提供实物色卡/电子色卡给供应商打版，超过2次以上都没打对，想要知道打版的难度，无法做到是供应商的能力问题，还是意愿问题、或是材料难度问题？</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-gray-50"><span class="font-bold text-orange-600">产品卖点输出：</span><span class="text-gray-700">希望能进一步挖掘产品卖点，用于新品开发/老品升级</span></div>
+                            <div class="p-4 rounded-lg bg-gray-50"><span class="font-bold text-orange-600">供应商推荐：</span><span class="text-gray-700">希望知道某个品类哪些供应商会做得比较好，适合我们的需求</span></div>
+                            <div class="p-4 rounded-lg bg-gray-50"><span class="font-bold text-orange-600">UV胶/粉类供应商评估：</span><span class="text-gray-700">希望知道供应商做某个/某类产品的产能（从下单量看我们的生产份额占比）、生产成本（了解每个环节的生产周期、人员投入）</span></div>
+                            <div class="p-4 rounded-lg bg-gray-50"><span class="font-bold text-orange-600">新品成本评估/老品降本评估：</span><span class="text-gray-700">希望能知道某款内料的成本结构和范畴，能进一步掌控采购价格谈判话语权</span></div>
                         </div>
-                        <div class="flex items-start space-x-4 md:col-span-2">
-                            <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">针对新品开发，与我们沟通需求时</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="font-bold text-lg text-orange-600 mb-3">一．以下信息，有的话，都前置信息同步给我们：</h4>
+                                <ul class="list-decimal list-inside space-y-2 text-gray-700">
+                                    <li>项目目标/周期/产品定级等信息</li><li>客户需求调研&分析文档</li><li>竞对分析&好差评调研文档</li><li>寻源需求书/没有需求书的需求</li><li>立项PPT-可看的产品部分</li><li>其他需求书上没有的，例如产品级别/销售渠道/下单量/组合结构等信息</li><li>可对标的实物样板</li>
+                                </ul>
                             </div>
                             <div>
-                                <h3 class="font-bold text-lg text-orange-600 mb-1">赋能组织</h3>
-                                <p class="text-gray-700">包括积累与产品有关的组织经验/资产，我们有做了可能是全行业最完整、清晰度的产品知识库。</p>
+                                <h4 class="font-bold text-lg text-orange-600 mb-3">二．具体沟通的关键点，可以包括以下：</h4>
+                                <ul class="list-decimal list-inside space-y-2 text-gray-700">
+                                    <li>风险机会&创新可行性</li><li>沟通供应寻源思路（to-采购）</li><li>对齐消费者测试&功能性测试方案、以及多方测试结果</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tab 2: 经验与能力边界 -->
-            <div id="tab2" class="tab-pane hidden">
-                <div class="card p-4 md:p-6 overflow-x-auto">
-                    <table class="w-full text-sm text-left text-gray-600">
-                        <thead class="text-xs text-gray-700 uppercase bg-orange-50">
-                            <tr>
-                                <th scope="col" class="py-3 px-4 rounded-l-lg">大品类</th>
-                                <th scope="col" class="py-3 px-4">小品类</th>
-                                <th scope="col" class="py-3 px-4">我们的能力程度</th>
-                                <th scope="col" class="py-3 px-4">关于底层逻辑</th>
-                                <th scope="col" class="py-3 px-4">关于异常原因</th>
-                                <th scope="col" class="py-3 px-4">关于成本范畴</th>
-                                <th scope="col" class="py-3 px-4">关于风险在哪</th>
-                                <th scope="col" class="py-3 px-4">是否能提供配方样板</th>
-                                <th scope="col" class="py-3 px-4 rounded-r-lg">是否有对应产品知识库</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white border-b"><th rowspan="5" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">UV胶(照灯)</th><td>所有有色胶类(含多种)</td><td><span class="tag tag-green">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以, 但只调基本色</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>底胶类</td><td><span class="tag tag-green">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>封层类</td><td><span class="tag tag-green">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>水晶胶</td><td><span class="tag tag-green">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>其他功能胶</td><td><span class="tag tag-green">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><th rowspan="2" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">胶水类(自干)</th><td>DP胶</td><td><span class="tag tag-yellow">熟悉</span></td><td>✓</td><td>✓</td><td>大致✓</td><td>✓</td><td>不做, 是另一套体系</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>美甲胶水</td><td><span class="tag tag-yellow">熟悉</span></td><td>✓</td><td>✓</td><td>大致✓</td><td>✓</td><td>一套体系</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><th rowspan="2" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">粉体类</th><td>DP粉</td><td><span class="tag tag-green">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>不做</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>水晶粉</td><td><span class="tag tag-green">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>不做</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><th rowspan="2" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">卸甲类</th><td>丙酮水剂类</td><td><span class="tag tag-green">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>非丙酮水剂类</td><td><span class="tag tag-green">掌握</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><th rowspan="5" class="py-4 px-4 font-medium text-gray-900 bg-gray-50">其他类</th><td>膏霜类</td><td><span class="tag tag-yellow">熟悉</span></td><td>✓</td><td>✓</td><td>大致✓</td><td>大致✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>油性指甲油</td><td><span class="tag tag-yellow">熟悉</span></td><td>✓</td><td>不熟</td><td>不熟</td><td>✓</td><td>不能, 没积累</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>水性指甲油</td><td><span class="tag tag-yellow">熟悉</span></td><td>✓</td><td>✓</td><td>不熟</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>吻合剂</td><td><span class="tag tag-green">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><td>清洁液/洗笔液</td><td><span class="tag tag-green">精通</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>可以</td><td>✓</td></tr>
-                            <tr class="bg-white border-b"><th class="py-4 px-4 font-medium text-gray-900 bg-gray-50"></th><td>解胶剂</td><td><span class="tag tag-yellow">熟悉</span></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>不做</td><td>✓</td></tr>
-                            <tr class="bg-white"><th class="py-4 px-4 font-medium text-gray-900 bg-gray-50 rounded-bl-lg"></th><td>纯护肤类</td><td><span class="tag tag-yellow">熟悉</span></td><td>看品类</td><td>看品类</td><td>看品类</td><td>看品类</td><td>做不了</td><td>✓-有部分</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Tab 3: 关于测试 -->
+            <!-- Tab 3: 功能&相容性测试 -->
             <div id="tab3" class="tab-pane hidden">
                 <div class="space-y-6">
                     <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">1. 为什么要合并？</h3>
-                        <p class="text-center text-lg p-4 bg-green-50 rounded-lg text-green-800">缩短链路 + 集中资源 + 专业输出 = <span class="font-bold">有效决策 + 降本提效</span></p>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">2. 合并什么？合并之后谁来接、谁来测、谁来交？</h3>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>将“功能性测试（原技术部测）”与“相容性测试（原质量部测）”合并，统一命名为<span class="font-bold text-orange-600">“功能&相容性测试”</span>；</li>
-                            <li>由技术部统一承接、统一执行、统一交付；对接人为<span class="font-bold text-orange-600">蔡金凤</span>。</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6">
-                         <h3 class="font-bold text-xl text-gray-800 mb-4">3. 合并后的测试对象（目标）为美甲内料，其定义是什么、不包括什么：</h3>
+                         <h3 class="font-bold text-xl text-gray-800 mb-4">一．测试对象（目标）为美甲内料，其定义是什么、不包括什么：</h3>
                          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-                                 <h4 class="font-bold text-green-800 mb-2">定义 (包括 ✔)</h4>
-                                 <p class="text-green-700">核心功能是直接作用于指甲盖及指甲周边皮肤，以实现装饰/保护/延长/护理/清洁/卸除等为目的的产品。</p>
-                            </div>
-                            <div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
-                                <h4 class="font-bold text-red-800 mb-2">不包括什么 (✖)</h4>
-                                <ul class="list-disc list-inside text-red-700 space-y-2">
-                                    <li>核心功能作用在“指甲盖及指甲周边皮肤”之外的非美甲料体，如彩妆（用于面部及其他身体等）、护肤（用于面部/手足护理等）、个护（用于头发/身体护理等）；</li>
-                                    <li>工具设备（灯具/打磨机/笔/沾粉盒/搓条等）、耗材类（棉片、纸托类等）；</li>
-                                    <li class="text-sm">上述，由质量部继续承接。</li>
-                                </ul>
-                            </div>
+                            <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500"><h4 class="font-bold text-green-800 mb-2">定义 (包括 ✔)</h4><p class="text-green-700">核心功能是直接作用于指甲盖及指甲周边皮肤，以实现装饰/保护/延长/护理/清洁/卸除等为目的的产品。</p></div>
+                            <div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-500"><h4 class="font-bold text-red-800 mb-2">不包括什么 (✖)</h4><ul class="list-disc list-inside text-red-700 space-y-2"><li>核心功能作用在“指甲盖及指甲周边皮肤”之外的非美甲料体，如彩妆（用于面部及其他身体等）、护肤（用于面部/手足护理等）、个护（用于头发/身体护理等）；</li><li>工具设备（灯具/打磨机/笔/沾粉盒/搓条等）、耗材类（棉片、纸托类等）；</li><li class="text-sm">上述，由质量部继续承接。</li></ul></div>
                          </div>
-                         <div class="mt-4 p-4 bg-orange-50 rounded-lg text-sm text-orange-800">
-                             <span class="font-bold">关于跨品类创新：</span>假如出现跨品类创新如何定义？例如开发“一款既可以用于发尾护理（属于个护）、又可以用于指甲盖滋养（属于美甲）”的产品——我们建议按料体“本质属性+主要功能”来区分，最终解释权归EMT。
-                         </div>
+                         <div class="mt-4 p-4 bg-orange-50 rounded-lg text-sm text-orange-800"><span class="font-bold">关于跨品类创新：</span>假如出现跨品类创新如何定义？例如开发“一款既可以用于发尾护理（属于个护）、又可以用于指甲盖滋养（属于美甲）”的产品——我们建议按料体“本质属性+主要功能”来区分，最终解释权归EMT。</div>
                     </div>
-                     <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">4. 关于测试交付</h3>
-                        <ul class="list-disc list-inside text-gray-700 space-y-3">
-                            <li>由于后续“测试承接量变大+进行精细化测试+含技术部评估”，因此我们会分2个时间段交付结果，产品出炉后的<span class="font-bold">第2天</span>，交付“基础版测试结果”（确认通过概率），<span class="font-bold">第3天</span>交付含评估和解决建议在内的完整报告（确保深度分析质量）。</li>
-                            <li>考虑交付质量，我们1天仅交付一份测试结果，如有多份需扎堆交付，会根据具体项目优先级与PM具体沟通。如有公司级紧急项目需要特殊处理，请PM提前与蔡金凤沟通协调。</li>
-                        </ul>
-                     </div>
-                </div>
-            </div>
-
-            <!-- Tab 4: 拿样数量 -->
-            <div id="tab4" class="tab-pane hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="card p-6">
-                        <h3 class="font-bold text-lg text-orange-600 mb-3">UV类</h3>
-                        <p class="text-sm text-gray-500 mb-3">前期简单评估: 1-2瓶</p>
-                        <div class="space-y-2 text-gray-700">
-                            <div class="flex justify-between"><span>色胶:</span><span class="font-bold">36瓶</span></div>
-                            <div class="flex justify-between"><span>无色胶:</span><span class="font-bold">14瓶</span></div>
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">二．具体的测试类型和内容包括哪些？</h3>
+                        <div class="text-gray-700 space-y-2">
+                            <p><strong class="text-orange-600">——组合类型：</strong>新料体+大货包材、旧料体+新大货包材；</p>
+                            <p><strong class="text-orange-600">——测试内容：</strong>高温、低温、环境、常温、紫外线耐候、密度；</p>
                         </div>
                     </div>
                     <div class="card p-6">
-                        <h3 class="font-bold text-lg text-orange-600 mb-3">自干 / 粉体 / 快干</h3>
-                        <p class="text-sm text-gray-500 mb-3">前期简单评估: 1-2瓶</p>
-                        <div class="space-y-2 text-gray-700">
-                            <div class="flex justify-between"><span>防溢胶等 (自干):</span><span class="font-bold">16瓶</span></div>
-                            <div class="flex justify-between"><span>DP/水晶粉 (粉体):</span><span class="font-bold">15瓶</span></div>
-                            <div class="flex justify-between"><span>DP美胶水 (粉体):</span><span class="font-bold">18瓶</span></div>
-                            <div class="flex justify-between"><span>美甲胶水 (快干):</span><span class="font-bold">18瓶</span></div>
-                        </div>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="font-bold text-lg text-orange-600 mb-3">指甲油 / 卸甲</h3>
-                        <p class="text-sm text-gray-500 mb-3">前期简单评估: 1-2瓶</p>
-                        <div class="space-y-2 text-gray-700">
-                            <div class="flex justify-between"><span>水性/油性 (指甲油):</span><span class="font-bold">42瓶</span></div>
-                            <div class="flex justify-between"><span>危/非危配方 (卸甲):</span><span class="font-bold">18瓶</span></div>
-                        </div>
-                    </div>
-                    <div class="card p-6 md:col-span-2 lg:col-span-3">
-                        <h3 class="font-bold text-lg text-orange-600 mb-3">溶剂</h3>
-                        <p class="text-sm text-gray-500 mb-3">前期简单评估: 1-2瓶</p>
-                        <div class="flex justify-between items-center text-gray-700">
-                            <span>DP干燥剂, DP洗刷水, 水晶液, 吻合剂/干燥剂/解胶剂, 强化剂, 清洁液/洗笔精华</span>
-                            <span class="font-bold text-xl ml-4 flex-shrink-0">共52瓶</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tab 5: 高效协作 -->
-            <div id="tab5" class="tab-pane hidden">
-                <div class="space-y-6">
-                    <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">关于1→N美甲增款：何时需要前置评估？</h3>
-                        <div class="overflow-x-auto mb-4">
-                            <table class="w-full text-sm text-left">
-                                <thead class="text-xs text-gray-700 uppercase bg-orange-50">
-                                    <tr><th class="p-3">/</th><th class="p-3">类型</th><th class="p-3">是否需要提前告知我们</th><th class="p-3">备注</th></tr>
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">三．到底消费者测试和产品功能&兼容性测试的区别在哪里？</h3>
+                        <div class="table-responsive table-wrap-text">
+                            <table class="w-full text-left text-sm">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="p-3 border w-1/5">区别维度</th>
+                                        <th class="p-3 border w-2/5">消费者测试</th>
+                                        <th class="p-3 border w-2/5">产品功能&兼容性测试</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-b"><td class="p-3 font-medium">1</td><td class="p-3 font-medium">纯色增色</td><td class="p-3 text-center">×</td><td class="p-3">/</td></tr>
-                                    <tr class="border-b"><td class="p-3 font-medium">2</td><td class="p-3 font-medium">闪粉增款</td><td class="p-3">——封层类: √ <br>——其他类: ×</td><td class="p-3">1. 封层+闪粉, 是极易干胶体质；<br>2. 特殊闪粉=不常见的, 例如极光类等, 如果拿捏不准, 有疑问, 可以把图片发金凤</td></tr>
-                                    <tr class="border-b"><td class="p-3 font-medium">3</td><td class="p-3 font-medium">特殊款增款</td><td class="p-3 text-center">√</td><td class="p-3">特殊款=非纯色非闪粉的其他类型：包括但不限于螺纹款/金属/光变/各种温变/各种猫眼/镭射等等</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">测试载体</td><td class="p-3 border">人手 (带有主观/场景随机性)</td><td class="p-3 border">各种测试工具 (标准化环境)</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">结果可复现性</td><td class="p-3 border">低 (依赖用户行为惯性)，复现成本高</td><td class="p-3 border">较高 (操作可控)，复现成本低</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">核心价值</td>
+                                        <td class="p-3 border align-top">
+                                            <p>利用消费者经验的参差多样化：</p>
+                                            <ul class="list-decimal list-inside mt-2 space-y-1">
+                                                <li><span class="highlight-blue">发现产品问题</span> (暴露未知/非标需求)，例如发现某个差评，通过观察消费者操作路径，去还原真实问题 -> 锁定真正要解决的问题；</li>
+                                                <li>通过更长时间维度的周期性观察的 -> <span class="highlight-blue">“洞察客户在体验链”</span>上的需求；</li>
+                                            </ul>
+                                        </td>
+                                        <td class="p-3 border align-top">
+                                            <p>通过控制变量/额外增加约束条件或挑战：</p>
+                                             <ul class="list-decimal list-inside mt-2 space-y-1">
+                                                <li><span class="highlight-blue">发现</span>不同影响程度的确定性<span class="highlight-blue">风险</span>，以及主要<span class="highlight-blue">功能是否符合需求</span>；</li>
+                                                <li>发现未知的产品卖点机会。</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">测试逻辑</td><td class="p-3 border">观察行为 -> 发现关键词 -> 还原至具体场景 -> 发现问题矛盾 -> 锁定关键锚点。</td><td class="p-3 border">变量拆解 -> 设计方案 -> 异常分析 -> 行动校准 -> 方法迭代</td></tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-800 mb-2">1. 为什么需要提前告知我们？</h4>
-                                <ul class="space-y-2 text-gray-700 text-sm">
-                                    <li><strong class="text-orange-600">【材料角度】</strong>：类型太多，水太深，材质与工艺差异甚多，行业贸易商居多，鱼龙混杂，<span class="highlight-red">总体都比基料本身复杂很多</span>；</li>
-                                    <li><strong class="text-orange-600">【配方角度】</strong>：因为特殊款材料属于配方的一部分，中间有大量是否相容，是否适配的风险在，所以，这类增款，貌似是增色，实际上，从料体的角度，这属于<span class="highlight-red">另一个完全不同的新品</span>；</li>
-                                    <li><strong class="text-orange-600">【前置评估】</strong>：我们可以<span class="highlight-red">前置输出产品知识内容</span>，PM再根据项目实际情况，评估风险，确认是否推进测试；</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-800 mb-2">2. 提前告知我们，可以输出什么？</h4>
-                                <p class="text-gray-700 text-sm">包括但不限于“<span class="highlight-red">产品特性+原理输出+风险评估及防御建议+成本评估+材料商提供的款式类型</span>，用于拓款参考”——这些，都会跟更新到OA知识库里。</p>
-                            </div>
+                        <div class="mt-4 text-sm text-gray-600 space-y-1">
+                            <p>1. 两者的测试方法一定要有区别、且是互补的/相互印证的；</p>
+                            <p>2. 不同问题/维度，判断话语权都会有出入，例如气味偏低的判断话语权在消费者测试。</p>
+                        </div>
+                    </div>
+                     <div class="card p-6"><h3 class="font-bold text-xl text-gray-800 mb-4">四．关于测试交付</h3><ul class="list-disc list-inside text-gray-700 space-y-3"><li>由于后续“测试承接量变大+进行精细化测试+含技术部评估”，因此我们会分2个时间段交付结果，产品出炉后的<span class="font-bold">第2天</span>，交付“基础版测试结果”（确认通过概率），<span class="font-bold">第3天</span>交付含评估和解决建议在内的完整报告（确保深度分析质量）。</li><li>考虑交付质量，我们1天仅交付一份测试结果，如有多份需扎堆交付，会根据具体项目优先级与PM具体沟通。如有公司级紧急项目需要特殊处理，请PM提前与蔡金凤沟通协调。</li></ul></div>
+                </div>
+            </div>
+
+            <!-- Tab 4: 买样/寻样/拿样 -->
+            <div id="tab4" class="tab-pane hidden">
+                <div class="space-y-8">
+                    <div class="card p-6">
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">一．如何买样</h3>
+                        <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400 mb-6">
+                            <h4 class="font-bold text-yellow-800">关于对标物/样品可以有哪些？</h4>
+                            <ul class="list-decimal list-inside text-yellow-700 mt-2">
+                                <li>可以包括但不限于在售、国外、国内线上买的产品，供应商自荐供样、自研配方；</li>
+                                <li>如果真的一个“具体对标物”都没有，那至少需要跟我们沟通这个需求该怎么表达，能让供应商明白。</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg mb-6">
+                            <h4 class="font-bold text-gray-700">假如没有对标样品</h4>
+                             <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1 text-sm">
+                                <li><b>A1=旧功能, A2=新功能</b> (甚至从没有过的)；</li>
+                                <li><b>B1=旧料体系/表征/特征, B2=创新料体系/表征/特征</b> (甚至不知道可以是什么)；</li>
+                                <li>情况1: <b>A1+B2</b>: 可以在旧功能维度“持平/超过/补充”<b>XXX</b>物的需求，不局限料体系；</li>
+                                <li>情况2: <b>A2+B1</b>: 可以在状态/表征等上提“持平/超过/补充”<b>XXX</b>物的需求；</li>
+                                <li>情况3: <b>A1+B1</b>: 可直接对标；</li>
+                                <li>情况4: <b>A2+B2</b>: 那就建议先评估下可行性，确认具体要做个什么东西，再去打版。</li>
+                             </ul>
+                        </div>
+                         <div class="p-4 bg-orange-50 rounded-lg">
+                            <h4 class="font-bold text-orange-700">一些买样建议</h4>
+                             <ul class="list-decimal list-inside text-orange-600 mt-2">
+                                <li>针对怎样回来，目的是对比功能；建议如下：</li>
+                                <li>假如针对“专利+特殊功能/剂型/卖点”，建议先跟技术部沟通，确认真实性程度，再买样；</li>
+                             </ul>
+                        </div>
+                        <div class="table-responsive mt-4">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-gray-100">
+                                    <tr><th class="p-3 border">对标样类别</th><th class="p-3 border">在哪里买样，在功能性上更值得我们参考</th><th class="p-3 border">WHY</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="p-3 border font-medium">UV类</td><td class="p-3 border">中国国内</td><td class="p-3 border">1. 中国在UV美甲研发生产/创新上，属全球领先；<br>2. 国外UV仍停留在传统的选材/配方体系/卖点之上；<br>3. 国内线上几乎能买到所有已存在的UV胶产品，假如没找到，可能定品名没对上；</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">油性指甲油</td><td class="p-3 border">国外 (特别是美国)</td><td class="p-3 border">体系成熟、历史 (超百年)、卖点领先</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">水性指甲油/防溢胶/甲缘练习剂</td><td class="p-3 border">中国国内</td><td class="p-3 border">1. 产品非易燃≠安全，中国工厂多、品牌多、铺货多->能倒逼品质更好；<br>2. 国外，基本集中在做油性，水性极少；</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">DP类 (胶/粉)</td><td class="p-3 border">都行</td><td class="p-3 border">品类已相对固化，买样需求=有创新机会</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">清洁液</td><td class="p-3 border">中国国内</td><td class="p-3 border">成分简单+功能简单，国内已可满足</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">水晶液</td><td class="p-3 border">都行</td><td class="p-3 border">品类已相对固化，买样需求=有创新机会</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">可卸UV的卸甲产品</td><td class="p-3 border">国外 (特别是美国)</td><td class="p-3 border">国内生产的丙酮，其生产标准、水分含量、残留物比例是全球最低，会影响卸除效果。</td></tr>
+                                    <tr class="border-b"><td class="p-3 border font-medium">针对只卸指甲油的产品</td><td class="p-3 border">中国国内</td><td class="p-3 border">成分简单+卸除难度低。</td></tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">有助于“有效决策+降本提效”其他策略建议：</h3>
-                        <div class="space-y-4">
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong class="text-orange-600">【与技术部沟通】</strong>：可以在任何时间节点上，早沟通、早推进、早达成；</div>
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong class="text-orange-600">【尽量提前买样】</strong>：不同品类的买样建议，详见“拿样数量”页签；</div>
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong class="text-orange-600">【精细梳理客诉】</strong>：有助于对照实物，反观客户真实的差评使用场景和困惑，定性问题；</div>
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong class="text-orange-600">【沟通供应商们】</strong>：尽量避免全盘接收供应商给的所有样板，需要拉上技术部通过“测试+内部沟通+对外供应商沟通”进行配方筛选，确保后续测试精准有效；</div>
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong class="text-orange-600">【利用好知识库】</strong>：有2个入口 ： 钉钉产品知识库助理、OA-文件管理-产品研发-知识库；</div>
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">二．关于找供应商寻样</h3>
+                        <ul class="list-decimal list-inside space-y-4 text-gray-700">
+                            <li><b class="text-gray-800">【基本情况】</b>：95%我们的新品开发需求，其实供应商都能满足，因为他们已有非常多的配方积累，因此最关键的是，我们如何精准传达需求，且让对方理解→认同→做到；</li>
+                            <li><b class="text-gray-800">【假如需求有多个思路/想法/方案】</b>：切记不要都写在需求书上，因为供应商基本不会全部按照我们的需求打版，只会按照“自己理解+哪个有现成的材料+哪个更好做”，来决定选择哪个方向来打，最终打版回来就会五花八门，没有统一标准作选择，建议先沟通，借助供应商的经验来帮助我们评估和筛选（另外，也要结合实际的客户需求）；</li>
+                            <li><b class="text-gray-800">【精准寻样】</b>：当需求精准传达后，样板就就无需太多，如果太多，会影响人效、定版精准度、也浪费供应商的时间。</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">三．关于拿样数量</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                            <div class="p-4 bg-gray-50 rounded-lg"><h4 class="font-bold text-lg text-orange-600 mb-2">UV类</h4><div class="space-y-1"><div class="flex justify-between"><span>色胶:</span><span>36瓶</span></div><div class="flex justify-between"><span>无色胶:</span><span>14瓶</span></div></div></div>
+                            <div class="p-4 bg-gray-50 rounded-lg"><h4 class="font-bold text-lg text-orange-600 mb-2">自干 / 粉体 / 快干</h4><div class="space-y-1"><div class="flex justify-between"><span>防溢胶等 (自干):</span><span>16瓶</span></div><div class="flex justify-between"><span>DP/水晶粉 (粉体):</span><span>15瓶</span></div><div class="flex justify-between"><span>DP美胶水 (粉体):</span><span>18瓶</span></div><div class="flex justify-between"><span>美甲胶水 (快干):</span><span>18瓶</span></div></div></div>
+                            <div class="p-4 bg-gray-50 rounded-lg"><h4 class="font-bold text-lg text-orange-600 mb-2">指甲油 / 卸甲</h4><div class="space-y-1"><div class="flex justify-between"><span>水性/油性 (指甲油):</span><span>42瓶</span></div><div class="flex justify-between"><span>危/非危配方 (卸甲):</span><span>18瓶</span></div></div></div>
+                            <div class="p-4 bg-gray-50 rounded-lg md:col-span-2 lg:col-span-3"><h4 class="font-bold text-lg text-orange-600 mb-2">溶剂</h4><div class="flex justify-between items-center"><span>DP干燥剂, DP洗刷水, 水晶液, 吻合剂/干燥剂/解胶剂, 强化剂, 清洁液/洗笔精华</span><span class="font-bold text-lg ml-4 flex-shrink-0">共52瓶</span></div></div>
                         </div>
-                         <div class="mt-4 p-4 bg-orange-50 rounded-lg text-sm text-orange-800">
-                             <span class="font-bold">其他补充：</span>新品开发立项时，需同步质量部同事协同参与。
-                         </div>
+                        <div class="text-sm text-gray-600 space-y-2">
+                            <p><b>注：</b></p>
+                            <ul class="list-decimal list-inside ml-4">
+                                <li>上述数量：属于根据既定测试项目与方案的初步需求，最终实际数量，会根据需求有所变化，以最终沟通为准；</li>
+                                <li>什么情况下，会改变最终拿样数量？可能包括但不限于a. 特殊需求对应要特殊测试；b. 减少部分测试项目；c.大货包材不够；d. 根据过去测试经验，推断风险不大，可适当减少数量。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Tab 6: 其他答疑 -->
-            <div id="tab6" class="tab-pane hidden">
-                 <div class="card p-6">
-                    <h3 class="font-bold text-xl text-gray-800 mb-4">关于想看知识库：</h3>
-                    <p class="text-gray-700">我们的产品知识库文档数量、品类涵盖范畴，都非常大，可以告诉我们想要看具体什么产品？以及希望能解决什么问题，我们推荐专题给你看，会更高效。</p>
+
+            <!-- Tab 5: 其他答疑 -->
+            <div id="tab5" class="tab-pane hidden">
+                <div class="space-y-4">
+                    <!-- Accordion Item 1 -->
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">一．关于1→N美甲增款：何时需要前置评估？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t">
+                                <div class="overflow-x-auto mb-4">
+                                    <table class="w-full text-sm text-left">
+                                        <thead class="text-xs text-gray-700 uppercase bg-orange-50"><tr><th class="p-3">/</th><th class="p-3">类型</th><th class="p-3">是否需要提前告知我们</th><th class="p-3">备注</th></tr></thead>
+                                        <tbody>
+                                            <tr class="border-b"><td class="p-3 font-medium">1</td><td class="p-3 font-medium">纯色增色</td><td class="p-3 text-center">×</td><td class="p-3">/</td></tr>
+                                            <tr class="border-b"><td class="p-3 font-medium">2</td><td class="p-3 font-medium">闪粉增款</td><td class="p-3">——封层类: √ <br>——其他类: ×</td><td class="p-3">1. 封层+闪粉, 是极易干胶体质；<br>2. 特殊闪粉=不常见的, 例如极光类等, 如果拿捏不准, 有疑问, 可以把图片发金凤</td></tr>
+                                            <tr class="border-b"><td class="p-3 font-medium">3</td><td class="p-3 font-medium">特殊款增款</td><td class="p-3 text-center">√</td><td class="p-3">特殊款=非纯色非闪粉的其他类型：包括但不限于螺纹款/金属/光变/各种温变/各种猫眼/镭射等等</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-bold text-lg text-gray-800 mb-2">1. 为什么需要提前告知我们？</h4>
+                                        <ul class="space-y-2 text-gray-700 text-sm">
+                                            <li><strong class="text-orange-600">【材料角度】</strong>：类型太多，水太深，材质与工艺差异甚多，行业贸易商居多，鱼龙混杂，<span class="highlight-red">总体都比基料本身复杂很多</span>；</li>
+                                            <li><strong class="text-orange-600">【配方角度】</strong>：因为特殊款材料属于配方的一部分，中间有大量是否相容，是否适配的风险在，所以，这类增款，貌似是增色，实际上，从料体的角度，这属于<span class="highlight-red">另一个完全不同的新品</span>；</li>
+                                            <li><strong class="text-orange-600">【前置评估】</strong>：我们可以<span class="highlight-red">前置输出产品知识内容</span>，PM再根据项目实际情况，评估风险，确认是否推进测试；</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-gray-800 mb-2">2. 提前告知我们，可以输出什么？</h4>
+                                        <p class="text-gray-700 text-sm">包括但不限于“<span class="highlight-red">产品特性+原理输出+风险评估及防御建议+成本评估+材料商提供的款式类型</span>，用于拓款参考”——这些，都会跟更新到OA知识库里。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 2 -->
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">二．为什么测的时候没问题，但大货又会出现问题？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                                <ul class="list-decimal list-inside space-y-2">
+                                    <li>美甲内料产品，本质上属于化工品，化工品在生产过程中，会出现因上游材料迭代/工艺变而导致的不稳定问题，成本越低的配方，不稳定的可能性越高；</li>
+                                    <li>不管是开新/储备，我们的测试对象都是个别的、某次的料体，单次OK≠持续OK，正如做1次好人≠做一辈子好人；</li>
+                                    <li>解决方法是：根据不同产品的重要性/紧急程度，投入资源，做进行大货一致性验证，需要跨部门一起努力；</li>
+                                    <li>退一步讲，不排除供应商会为了争取我们的订单，供样好配方，定版后，实际出货用差的配方。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 3 -->
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">三．关于不同产品的“不同温度+不同时间”怎么界定这件事？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                                <ul class="list-decimal list-inside space-y-2">
+                                    <li>因为行业没标准，每个工厂对同一类产品的所使用的“不同温度+不同时间”都不一样，这个是常态；</li>
+                                    <li>一般是50℃、70℃、3天、7天、14天、30天这几个组合方式；</li>
+                                    <li>我们可以给每个品类锁定一个建议值，但不能完全一刀切照搬执行，可以根据以下情况按需调整：
+                                        <ul class="list-disc list-inside ml-6 mt-2">
+                                            <li>看需求标准，“高标准的产品”肯定比“走性价比的产品”要求要高，体现在温度和天数的提升上；</li>
+                                            <li>看供应商是怎么做的，例如DP胶我们判断50℃+14天就够了，但如果供应商是做70℃+14天的，也可以调整（需注意：有些供应商所宣称的温度和时间，不一定属实）；</li>
+                                            <li>看材料的耐受程度：如果我们能清晰知道配方成分，就可以根据不同材料选择不同的温度和时间。</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -316,13 +523,41 @@
                 e.target.classList.add('active');
 
                 panes.forEach(pane => {
+                    const currentPane = document.getElementById(pane.id);
                     if (pane.id === tabId) {
-                        pane.classList.remove('hidden');
+                        currentPane.classList.remove('hidden');
                     } else {
-                        pane.classList.add('hidden');
+                        currentPane.classList.add('hidden');
                     }
                 });
             }
+        });
+
+        // Accordion script
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const arrow = header.querySelector('.accordion-arrow');
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    arrow.classList.remove('rotate-180');
+                } else {
+                    // Close all other accordions
+                    accordionHeaders.forEach(otherHeader => {
+                        const otherContent = otherHeader.nextElementSibling;
+                        const otherArrow = otherHeader.querySelector('.accordion-arrow');
+                        if(otherContent.style.maxHeight){
+                           otherContent.style.maxHeight = null;
+                           otherArrow.classList.remove('rotate-180');
+                        }
+                    });
+                    // Open the clicked one
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    arrow.classList.add('rotate-180');
+                }
+            });
         });
     </script>
 
