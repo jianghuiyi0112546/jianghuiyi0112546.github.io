@@ -48,9 +48,7 @@
             padding: 12px 16px;
         }
         .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            display: none;
         }
         .accordion-arrow {
             transition: transform 0.3s ease;
@@ -66,7 +64,7 @@
         <!-- Header -->
         <header class="text-center mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">产品技术部 从需求→定版 跨部门沟通协作指南</h1>
-            <p class="text-lg text-gray-500 mt-2">2025年8月20日3.0版</p>
+            <p class="text-lg text-gray-500 mt-2">2025年9月3日4.0版</p>
         </header>
 
         <!-- Tab Navigation -->
@@ -367,7 +365,7 @@
                     </div>
                     <div class="card">
                         <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
-                            <h3 class="font-bold text-xl text-gray-800">四. 功能&相容性测试的流程，具体该怎么走？<span class="highlight-red">——前期先线下（金凤给表）、陆续走线上</span></h3>
+                            <h3 class="font-bold text-xl text-gray-800"><span class="highlight-red">四. 功能&相容性测试的流程，具体该怎么走？——前期先线下（金凤给表）、陆续走线上</span></h3>
                             <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="accordion-content">
@@ -401,7 +399,7 @@
                     </div>
                     <div class="card">
                          <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
-                            <h3 class="font-bold text-xl text-gray-800">五. 哪些产品/项目/情况会简单测试？哪些会启动详细测试？<span class="highlight-red">——从风险、重要性考虑投产比</span></h3>
+                            <h3 class="font-bold text-xl text-gray-800"><span class="highlight-red">五. 哪些产品/项目/情况会简单测试？哪些会启动详细测试？——从风险、重要性考虑投产比</span></h3>
                             <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="accordion-content">
@@ -442,7 +440,7 @@
                     </div>
                     <div class="card">
                          <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
-                            <h3 class="font-bold text-xl text-gray-800">六. 如何有效缩短开发周期和测试周期？<span class="highlight-red">——3个思路帮助提升速度</span></h3>
+                            <h3 class="font-bold text-xl text-gray-800"><span class="highlight-red">六. 如何有效缩短开发周期和测试周期？——3个思路帮助提升速度</span></h3>
                             <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="accordion-content">
@@ -470,7 +468,7 @@
                                             <p class="text-gray-700 text-sm pl-4">有分7天（提速版）、14天（正常版）；</p>
                                         </div>
                                         <div>
-                                            <h5 class="font-semibold text-gray-800">三．具体确定测试天数的逻辑：</h5>
+                                            <h5 class="font-semibold text-gray-800">三．决策逻辑：</h5>
                                              <p class="text-gray-700 text-sm pl-4"><span class="font-bold">前提1：</span>技术部根据“需求时效目标+过去测试经验+料体本质特性”，提出1-2个<span class="highlight-red">内部测试方案（A）</span>，并说明问题与风险；</p>
                                              <p class="text-gray-700 text-sm pl-4"><span class="font-bold">前提2：</span>如果多个供应商的测试条件都不一样，技术部折中选一个最合理的（合理=配方应该要通过这个测试，否则产品就有风险），作为<span class="highlight-red">“供应商综合测试条件方案”（B）</span></p>
                                         </div>
@@ -480,7 +478,7 @@
                                              <thead class="bg-gray-100">
                                                 <tr class="border-b">
                                                     <th class="p-2 border">情况</th>
-                                                    <th class="p-2 border">(A)与(B)的温度标准是否统一</th>
+                                                    <th class="p-2 border">(A) 与 (B) 的温度标准是否统一</th>
                                                     <th class="p-2 border">项目时效目标</th>
                                                     <th class="p-2 border">是否要沟通需求方</th>
                                                     <th class="p-2 border">测试方案怎么定</th>
@@ -488,11 +486,11 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="bg-white">
-                                                <tr class="border-b"><td class="p-2 border">第一种</td><td class="p-2 border">能，供应商认可料体可抗住，不会有异常</td><td class="p-2 border">能满足</td><td class="p-2 border">/</td><td class="p-2 border">按 (A) 的温度+天数</td><td class="p-2 border">/</td></tr>
-                                                <tr class="border-b"><td class="p-2 border">第二种</td><td class="p-2 border">不能，但 (B) 温度标准不算低</td><td class="p-2 border">不满足 (B时间长)</td><td rowspan="3" class="p-2 border align-middle">要</td><td class="p-2 border" style="white-space: normal;">同意延长测试时间：按 (B) 的温度+天数<br>不同意延长测试时间→按 (A) 的温度+天数</td><td rowspan="2" class="p-2 border align-middle" rowspan="2">技术部会说明延长/调整标准的风险</td></tr>
-                                                <tr class="border-b"><td class="p-2 border">第三种</td><td class="p-2 border">不能，但 (B) 温度标准远低于我们的</td><td class="p-2 border">不满足 (B时间长)</td><td class="p-2 border" style="white-space: normal;">同意提升标准+缩短时间：按 (A) 的温度+天数<br>不同意提升标准+缩短时间：→按 (B) 的温度+天数</td></tr>
-                                                <tr class="border-b"><td class="p-2 border">第四种</td><td class="p-2 border">不能，但 (B) 温度标准远低于我们的</td><td class="p-2 border">能满足</td><td class="p-2 border">要</td><td class="p-2 border" style="white-space: normal;">沟通供应商温度标准，假如需方同意提升标准：按 (A) 的温度+天数<br>不同意提升标准→按 (B) 的温度+天数</td><td class="p-2 border"></td></tr>
-                                                <tr><td class="p-2 border">第五种</td><td class="p-2 border">不能，但 (B) 温度标准不算低</td><td class="p-2 border">能满足</td><td class="p-2 border">/</td><td class="p-2 border">按 (B) 的温度+天数</td><td class="p-2 border">/</td></tr>
+                                                <tr class="border-b"><td class="p-2 border">第一种</td><td class="p-2 border">能，供应商认可料体可抗住，不会有异常</td><td class="p-2 border">能满足</td><td class="p-2 border">/</td><td class="p-2 border">按 <span class="highlight-red">(A)</span> 的温度+天数</td><td class="p-2 border">/</td></tr>
+                                                <tr class="border-b"><td class="p-2 border">第二种</td><td class="p-2 border">不能，但 (B) 温度标准不算低</td><td class="p-2 border">不满足 (B时间长)</td><td rowspan="3" class="p-2 border align-middle">要</td><td class="p-2 border" style="white-space: normal;">同意延长测试时间：按 <span class="highlight-red">(B)</span> 的温度+天数<br>不同意延长测试时间→按 <span class="highlight-red">(A)</span> 的温度+天数</td><td rowspan="2" class="p-2 border align-middle" rowspan="2">技术部会说明延长/调整标准的风险</td></tr>
+                                                <tr class="border-b"><td class="p-2 border">第三种</td><td class="p-2 border">不能，但 (B) 温度标准远低于我们的</td><td class="p-2 border">不满足 (B时间长)</td><td class="p-2 border" style="white-space: normal;">同意提升标准+缩短时间：按 <span class="highlight-red">(A)</span> 的温度+天数<br>不同意提升标准+缩短时间：→按 <span class="highlight-red">(B)</span> 的温度+天数</td></tr>
+                                                <tr class="border-b"><td class="p-2 border">第四种</td><td class="p-2 border">不能，但 (B) 温度标准远低于我们的</td><td class="p-2 border">能满足</td><td class="p-2 border">要</td><td class="p-2 border" style="white-space: normal;">沟通供应商温度标准，假如需方同意提升标准：按 <span class="highlight-red">(A)</span> 的温度+天数<br>不同意提升标准→按 <span class="highlight-red">(B)</span> 的温度+天数</td><td class="p-2 border"></td></tr>
+                                                <tr><td class="p-2 border">第五种</td><td class="p-2 border">不能，但 (B) 温度标准不算低</td><td class="p-2 border">能满足</td><td class="p-2 border">/</td><td class="p-2 border">按 <span class="highlight-red">(B)</span> 的温度+天数</td><td class="p-2 border">/</td></tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -564,7 +562,7 @@
                     </div>
                     <div class="card">
                         <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
-                            <h3 class="font-bold text-xl text-gray-800">八. 为了解决测试异常难以归因的问题<span class="highlight-red">——部分玻璃瓶需求我们采取“洗瓶+烘毛刷”</span>：</h3>
+                            <h3 class="font-bold text-xl text-gray-800"><span class="highlight-red">八. 为了解决测试异常难以归因的问题——部分玻璃瓶需求我们采取“洗瓶+烘毛刷”</span>：</h3>
                              <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                          <div class="accordion-content">
@@ -1037,6 +1035,29 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Accordion Item 6 -->
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">六：关于“由于测试温度设定太高，导致料体容易异常，影响项目进度”的回应：</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-4">
+                                <div>
+                                    <ul class="list-none space-y-2">
+                                        <li><b>前提1：</b>高温的初衷，是为了用最短的时间，预测长期储存的稳定性，<span class="highlight-red">在一样条件下变化越小=配方越是稳定=生命周期越长</span>；</li>
+                                        <li><b>前提2：</b>有些品类，有异常是正常的（例如封层高温后都会有或多或少的变化），但我们会看异常的程度（具体是第几天出现了怎样程度的异常），这里需要<span class="highlight-red">具体问题，具体分析</span>，没完美，只有更优；</li>
+                                        <li><b>前提3：</b>自研做的封层研发，也是用80度来测，已验证很多配方都可以过80度；</li>
+                                        <li><b>前提4：</b>由于“品类多+供应商测试温度和天数差异大”→压根没法统一，我们会选择了<span class="highlight-red">“保持原则+灵活处理”来推进</span>，详见“功能&相容性测试”模块→如何有效缩短开发周期和测试周期，简单总结就是，供应商认为高标准可行，我们就按高标准去测，假如他认为过不了，我们就视乎具体的品类，折衷降低测试温度。</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-yellow-50 rounded-lg text-sm">
+                                    <p><span class="font-bold">举例说明</span>，我们手里有2-3套考题，针对三年级、四年级、五年级，如果供应商认为自己能考五年级的，我们就给TA五年级的考题做，如果他说不行，就看他所声称的“配方能力”，我们可以选择三年级、四年级的考题TA做，这样，既能保证我们的通过率、又不会过分宽松。</p>
+                                </div>
+                                <p>所以，这里核心的问题是，要充分沟通，供应商不能张嘴就来承诺，需要有依据、有考虑地提出他们已验证可行的测试条件。</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1044,67 +1065,56 @@
     </div>
 
     <script>
-        const tabNav = document.getElementById('tab-nav');
-        const tabContent = document.getElementById('tab-content');
-        const tabs = tabNav.querySelectorAll('.tab-btn');
-        const panes = tabContent.querySelectorAll('.tab-pane');
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabNav = document.getElementById('tab-nav');
+            const tabContent = document.getElementById('tab-content');
+            
+            if(tabNav) {
+                const tabs = tabNav.querySelectorAll('.tab-btn');
+                const panes = tabContent.querySelectorAll('.tab-pane');
 
-        tabNav.addEventListener('click', (e) => {
-            if (e.target.classList.contains('tab-btn')) {
-                const tabId = e.target.getAttribute('data-tab');
+                tabNav.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('tab-btn')) {
+                        const tabId = e.target.getAttribute('data-tab');
 
-                tabs.forEach(tab => {
-                    tab.classList.remove('active');
-                });
-                e.target.classList.add('active');
+                        tabs.forEach(tab => {
+                            tab.classList.remove('active');
+                        });
+                        e.target.classList.add('active');
 
-                panes.forEach(pane => {
-                    if (pane.id === tabId) {
-                        pane.classList.remove('hidden');
-                    } else {
-                        pane.classList.add('hidden');
-                    }
-                });
-            }
-        });
-
-        // Accordion script
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', function(event) {
-                event.stopPropagation();
-
-                const content = this.nextElementSibling;
-                if (!content || !content.classList.contains('accordion-content')) {
-                    return;
-                }
-                
-                const arrow = this.querySelector('.accordion-arrow');
-                const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
-
-                // If the clicked accordion is already open, close it. Otherwise, open it.
-                if (isExpanded) {
-                    content.style.maxHeight = null;
-                    if (arrow) arrow.classList.remove('rotate-180');
-                } else {
-                    // Close sibling accordions at the same level before opening the new one
-                    const parentContainer = this.parentElement.parentElement;
-                    if (parentContainer) {
-                        const siblingHeaders = parentContainer.querySelectorAll(':scope > .card > .accordion-header, :scope > .border-lg > .accordion-header');
-                         siblingHeaders.forEach(otherHeader => {
-                            if (otherHeader !== this) {
-                               const otherContent = otherHeader.nextElementSibling;
-                               const otherArrow = otherHeader.querySelector('.accordion-arrow');
-                               if (otherContent) otherContent.style.maxHeight = null;
-                               if (otherArrow) otherArrow.classList.remove('rotate-180');
+                        panes.forEach(pane => {
+                            if (pane.id === tabId) {
+                                pane.classList.remove('hidden');
+                            } else {
+                                pane.classList.add('hidden');
                             }
                         });
                     }
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    if (arrow) arrow.classList.add('rotate-180');
-                }
+                });
+            }
+
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    
+                    const content = this.nextElementSibling;
+                    const arrow = this.querySelector('.accordion-arrow');
+
+                    // Toggle current accordion
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        if(arrow) arrow.classList.remove('rotate-180');
+
+                    } else {
+                        content.style.display = 'block';
+                        if(arrow) arrow.classList.add('rotate-180');
+                    }
+                });
             });
         });
     </script>
 
 </body>
 </html>
+
+
