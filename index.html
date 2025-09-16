@@ -64,7 +64,7 @@
         <!-- Header -->
         <header class="text-center mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">产品技术部 从需求→定版 跨部门沟通协作指南</h1>
-            <p class="text-lg text-gray-500 mt-2">2025年9月3日4.0版</p>
+            <p class="text-lg text-gray-500 mt-2">2025年9月16日 5.0版</p>
         </header>
 
         <!-- Tab Navigation -->
@@ -75,7 +75,7 @@
                 <button class="tab-btn" data-tab="tab3">功能&相容性测试</button>
                 <button class="tab-btn" data-tab="tab4">消费者测试答疑</button>
                 <button class="tab-btn" data-tab="tab5">如何买样/寻样/拿样更高效</button>
-                <button class="tab-btn" data-tab="tab6">提需求看这里/供应商沟通</button>
+                <button class="tab-btn" data-tab="tab6">关于过敏性测试</button>
                 <button class="tab-btn" data-tab="tab7">其他答疑</button>
             </nav>
         </div>
@@ -148,6 +148,13 @@
             <!-- Tab 2: 有这些疑问都可以找我们 -->
             <div id="tab2" class="tab-pane hidden">
                 <div class="space-y-8">
+                     <div class="card p-6 bg-orange-50 border-l-4 border-orange-400">
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">前提</h3>
+                        <ul class="list-decimal list-inside space-y-2 text-gray-700">
+                            <li>如果一件事3句话说不清，建议直接电话、不私聊/群里聊，聊完需要出总结；</li>
+                            <li>如果信息不止一个，是零散的（有文字/文档/图片/链接等多个），强烈建议统一梳理成同个文档/打包成文件夹，再给我们，节省双方对接的时间；</li>
+                        </ul>
+                    </div>
                     <div class="card p-6 table-responsive">
                         <h3 class="text-xl font-bold text-gray-800 text-center mb-4">需求沟通参考明细</h3>
                         <table class="w-full text-sm text-center">
@@ -454,7 +461,7 @@
                                     </ul>
                                 </div>
                                 <div class="card p-4 bg-orange-50">
-                                    <h4 class="font-bold text-lg text-orange-700 mb-2 text-center">“测试温度&测试天数选定逻辑”</h4>
+                                    <h4 class="font-bold text-lg text-orange-700 mb-2 text-center">“有可能会影响时效的测试条件（主要是天数）具体该怎么定”</h4>
                                     <div class="space-y-2">
                                         <div>
                                             <h5 class="font-semibold text-gray-800">一．核心原则：</h5>
@@ -465,7 +472,7 @@
                                         </div>
                                         <div>
                                             <h5 class="font-semibold text-gray-800">二．内部标准：</h5>
-                                            <p class="text-gray-700 text-sm pl-4">有分7天（提速版）、14天（正常版）；</p>
+                                            <p class="text-gray-700 text-sm pl-4">有分7天（提速）、14天（正常）；</p>
                                         </div>
                                         <div>
                                             <h5 class="font-semibold text-gray-800">三．决策逻辑：</h5>
@@ -659,10 +666,39 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-xl text-gray-800">十．关于跟供应商沟通</h3>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t">
+                                <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400 mb-6">
+                                     <h4 class="font-bold text-yellow-800">前提：</h4>
+                                     <p class="text-yellow-700 mt-2">避免问题以文字形式一来一回，减少理解分歧，最好集中梳理、集中沟通询问（且最好最好对接核心工程师）；</p>
+                                </div>
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-gray-800 mb-2">对于陌生供应商沟通新产品时，可以先搜集以下基本问题：</h4>
+                                    <ul class="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li>你们是测多少度、多少天？中间是否会观察？几天观察一次？</li>
+                                        <li>这个产品，假如你们有不同价位的不同配方，是否按统一的测试温度和时间来做的？</li>
+                                        <li>你们跟客户承诺这款产品的产品保质期是多久？</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">关于给供应商输出调整意见这件事：</h4>
+                                     <ul class="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li>举例，一个产品有ABCDEF，共6个维度，经测试，假如E和F维需要调整，需要避免只跟供应商说——给我调整E和F，假如供应商只听这”片面的需求”，有可能会以“牺牲ABCD的其中一些维度为代价，满足我们对于E和F的要求”，但这有可能会顾此失彼（配方体系的设计是个系统的事情，需要综合考虑）；</li>
+                                        <li>因此，建议跟供应商具体沟通，首先：对齐大家对于E和F的理解和需求（有可能大家理解不在一个层面），其次：询问他为啥E和F调不出来，是怎么考量的；然后，再沟通是否能做到，为啥做不到，如果必须得实现，那有可能需要作出怎样的取舍——以上，最好提前梳理“需求维度+优先级”，可以跟我们前置沟通，并且中途协助沟通；以上，这个建议，适用于所有品类。</li>
+                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Tab 4: 消费者测试答疑汇总 -->
+            <!-- Tab 4: 消费者测试答疑 -->
             <div id="tab4" class="tab-pane hidden">
                 <div class="space-y-6">
                     <div class="card p-6">
@@ -837,65 +873,206 @@
                 </div>
             </div>
 
-            <!-- Tab 6: 提需求看这里/供应商沟通 -->
+            <!-- Tab 6: 关于过敏性测试 -->
             <div id="tab6" class="tab-pane hidden">
-                <div class="space-y-8">
-                    <div class="card p-6 bg-orange-50 border-l-4 border-orange-400">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">前提</h3>
-                        <ul class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li>如果一件事3句话说不清，建议直接电话、不私聊/群里聊，聊完需要出总结；</li>
-                            <li>如果信息不止一个，是零散的（有文字/文档/图片/链接等多个），强烈建议统一梳理成同个文档/打包成文件夹，再给我们，节省双方对接的时间；</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">关于新品开发沟通，需要前置同步以下信息：</h3>
-                        <ul class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li>项目目标/周期/产品定级/组合结构等信息</li>
-                            <li>客户需求调研&amp;分析文档</li>
-                            <li>竞对分析&amp;好差评调研文档</li>
-                            <li>寻源需求书/没有需求书的需求</li>
-                            <li>立项PPT-可看的产品部分</li>
-                            <li>可对标的实物样板</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">关于配方储备，需要前置同步以下信息：</h3>
-                        <ul class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li>储备原因、目标时间、其他需求等；</li>
-                            <li>替代哪个品牌的哪个产品（例如在售SKU/配方编号/成分信息截图）；</li>
-                            <li>如果已经拿到样板的，需提供完整的样板信息（例如配方编号、到样数量、容量规格等）；</li>
-                        </ul>
-                        <p class="mt-4 text-sm bg-gray-100 p-3 rounded-md"><b>——针对多个配方/供应源、针对不止一个产品储备的</b>，建议一定要梳理好信息给我们，避免中间某个环节错乱，导致定版错误。（可以问我们拿模板文档填写具体内容）。</p>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">关于产品优化，需要前置同步以下信息：</h3>
-                        <ul class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li><b>优化原因：</b>因为XXXXXX，评分从X分掉到X分；</li>
-                            <li><b>优化调研：</b>详见“XXXXXX”文档；</li>
-                            <li><b>开发自测结果：</b>出库在售，对照竞对测试XXX维度，发现有问题；</li>
-                            <li><b>需求评估：</b>确认XXX的问题是否是该类产品的共性，如果要优化，可怎么调整？</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-4">关于跟供应商沟通</h3>
-                        <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400 mb-6">
-                            <h4 class="font-bold text-yellow-800">前提：</h4>
-                            <p class="text-yellow-700 mt-2">避免问题以文字形式一来一回，减少理解分歧，最好集中梳理、集中沟通询问（且最好最好对接核心工程师）；</p>
+                <div class="space-y-4">
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">一．定义：行业内理解的过敏是什么？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                                <ul class="list-decimal list-inside space-y-2">
+                                    <li>在全球范围，对“低过敏性”是没有统一的、医学的严格定义（更多属于营销术语），FDA没明确、也无需品牌提交证明，欧盟法规也没有；</li>
+                                    <li>该怎么正确解读/解释？“低过敏性”不等于“0过敏/不会过敏”，而是“较低的过敏风险”；</li>
+                                    <li>美甲行业里，什么为之美甲的低过敏产品？
+                                        <ul class="list-disc list-inside ml-6 mt-2">
+                                            <li>主流是不含有HEMA（也有一些是带上TPO）；</li>
+                                            <li>不同品牌的主张也不一样（X-free的X，从几种到40几种都有）；</li>
+                                            <li>也有一些品牌声称是“不含任何已被证明在指甲产品中使用时会引起过敏反应的成分”；</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-2">对于陌生供应商沟通新产品时，可以先搜集以下基本问题：</h4>
-                            <ul class="list-decimal list-inside space-y-2 text-gray-700">
-                                <li>你们是测多少度、多少天？中间是否会观察？几天观察一次？</li>
-                                <li>这个产品，假如你们有不同价位的不同配方，是否按统一的测试温度和时间来做的？</li>
-                                <li>你们跟客户承诺这款产品的产品保质期是多久？</li>
-                            </ul>
+                    </div>
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">二．过敏是个复杂问题，具体原因有哪些？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                                <p><b>——内因：</b></p>
+                                <ul class="list-disc list-inside pl-4">
+                                    <li>自身就有过敏史、指甲皮肤有真菌感染等问题；</li>
+                                    <li>遗传/饮食/睡眠/激素水平/免疫/代谢等原因；</li>
+                                </ul>
+                                <p><b>——外因：</b></p>
+                                <ul class="list-disc list-inside pl-4">
+                                    <li>剪死皮/倒刺时发生细菌感染了，如城门失守，给了“过敏原”大举进军的机会；</li>
+                                    <li>料体：a. 本身有致敏原成分；b. 配方比例存在不完全固化（有残留）</li>
+                                    <li>其他：紫外光过敏、美甲笔刷、工具不干净导致。</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 mb-2">关于给供应商输出调整意见这件事：</h4>
-                             <ul class="list-decimal list-inside space-y-2 text-gray-700">
-                                <li>举例，一个产品有ABCDEF，共6个维度，经测试，假如E和F维需要调整，需要避免只跟供应商说——给我调整E和F，假如供应商只听这”片面的需求”，有可能会以“牺牲ABCD的其中一些维度为代价，满足我们对于E和F的要求”，但这有可能会顾此失彼（配方体系的设计是个系统的事情，需要综合考虑）；</li>
-                                <li>因此，建议跟供应商具体沟通，首先：对齐大家对于E和F的理解和需求（有可能大家理解不在一个层面），其次：询问他为啥E和F调不出来，是怎么考量的；然后，再沟通是否能做到，为啥做不到，如果必须得实现，那有可能需要作出怎样的取舍——以上，最好提前梳理“需求维度+优先级”，可以跟我们前置沟通，并且中途协助沟通；以上，这个建议，适用于所有品类。</li>
-                             </ul>
+                    </div>
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">三．不同的目的，可以有不同的过敏测试方法和交付结果</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-4">
+                                <p class="font-semibold">前提：不建议公司内自行测试，因为“组织难+统计学上无意义”</p>
+                                 <div class="table-responsive">
+                                    <table class="w-full text-sm text-center border">
+                                        <thead class="bg-gray-50">
+                                            <tr class="border-b">
+                                                <th class="p-2 border">样本量(N)</th>
+                                                <th class="p-2 border">95%置信度下的不良反应率上限(假设0例发生)</th>
+                                                <th class="p-2 border">可行性与应用场景分析</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white">
+                                            <tr class="border-b"><td class="p-2 border">≥ 30 人</td><td class="p-2 border">≤ 10%</td><td class="p-2 border">法规 / 上市标准：满足大多数国家的法规要求、是黄金标准</td></tr>
+                                            <tr class="border-b"><td class="p-2 border">20 - 29 人</td><td class="p-2 border">10% - 15%</td><td class="p-2 border">可用于内部研发/初步筛选：虽不足以作为最终安全依据，但对于内部研发/验证性测试比较优势是可行的，但结论的强度较弱。</td></tr>
+                                            <tr class="border-b"><td class="p-2 border">10 - 19 人</td><td class="p-2 border">15% - 30%</td><td class="p-2 border">探索性测试：只适用于筛选，不适用于出结论/宣传或安全承诺。</td></tr>
+                                            <tr><td class="p-2 border">&lt; 10 人</td><td class="p-2 border">&gt; 30%</td><td class="p-2 border" style="white-space: normal;">无统计学意义：样本量过小，偶然性太大，测试结果无法推广到整体人群。基本上只相当于个案观察</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="w-full text-sm text-center border">
+                                        <thead class="bg-gray-50">
+                                            <tr class="border-b">
+                                                <th class="p-2 border">测试目的</th>
+                                                <th class="p-2 border">料体选择</th>
+                                                <th class="p-2 border" colspan="2">测试类型</th>
+                                                <th class="p-2 border">机构</th>
+                                            </tr>
+                                            <tr class="border-b bg-gray-50">
+                                                <th class="p-2 border"></th>
+                                                <th class="p-2 border"></th>
+                                                <th class="p-2 border">斑贴测试</th>
+                                                <th class="p-2 border">动物测试</th>
+                                                <th class="p-2 border"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white">
+                                            <tr class="border-b"><td class="p-2 border">给客户/平台看</td><td class="p-2 border">选择安全+保过的料体</td><td class="p-2 border">正规、按标准</td><td class="p-2 border" rowspan="3" style="vertical-align: middle;">可以</td><td class="p-2 border">能出正规报告</td></tr>
+                                            <tr class="border-b"><td class="p-2 border">用于配方决策定版</td><td class="p-2 border">在不调整整体配方下改变状态</td><td class="p-2 border">我们自定义使用量、逗留时间、测试人数</td><td class="p-2 border" rowspan="2" style="vertical-align: middle;">只提供结果记录，不出最终判定</td></tr>
+                                            <tr><td class="p-2 border">我们/供应商研发端用于原材料选择</td><td class="p-2 border">原材料不变，但经过稀释</td><td class="p-2 border">我们自定义使用量、逗留时间、测试人数</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="p-4 bg-yellow-50 rounded-lg text-sm">
+                                    <p class="font-bold">为什么不能做真正的斑贴测试（真正的斑贴测试=将料体按斑贴正规步骤涂抹在皮肤，逗留24-48小时）；</p>
+                                    <ul class="list-disc list-inside pl-4 mt-2">
+                                        <li>多数为不通过、即过敏率非常高，目前已知的美甲品牌方斑贴测试结果，多为造假；</li>
+                                        <li>斑贴测试本身是针对皮肤，但美甲料体主要是针对指甲盖。</li>
+                                        <li>假如我们使用自定义的斑贴测试，前期需要有数据积累。</li>
+                                    </ul>
+                                </div>
+                                <div class="table-responsive">
+                                     <h4 class="font-semibold text-lg text-gray-800 mb-2 text-center">斑贴测试和动物测试哪个更优</h4>
+                                     <table class="w-full text-sm text-center border">
+                                        <thead class="bg-gray-50">
+                                            <tr class="border-b">
+                                                <th class="p-2 border">比对维度</th>
+                                                <th class="p-2 border">斑贴测试</th>
+                                                <th class="p-2 border">动物测试</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white">
+                                            <tr class="border-b"><td class="p-2 border">更接近受体特质</td><td class="p-2 border">是</td><td class="p-2 border">否</td></tr>
+                                            <tr class="border-b"><td class="p-2 border">还原真实客户场景</td><td class="p-2 border">是</td><td class="p-2 border">否</td></tr>
+                                            <tr class="border-b"><td class="p-2 border">可信度</td><td class="p-2 border">看似更高</td><td class="p-2 border">看似更低</td></tr>
+                                            <tr class="border-b"><td class="p-2 border">易过敏程度/失败概率</td><td class="p-2 border">更高</td><td class="p-2 border">更低</td></tr>
+                                             <tr class="border-b"><td class="p-2 border">过程可控程度</td><td class="p-2 border">更低</td><td class="p-2 border">更高</td></tr>
+                                            <tr><td class="p-2 border">赔偿风险</td><td class="p-2 border">存在</td><td class="p-2 border">没有</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">四．过敏测试、功能&相容性测试、消费者测试，未来用什么顺序来排查/筛选？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                               <ul class="list-disc list-inside space-y-2">
+                                   <li><b>前提1：</b>基于风险，暂时只建议UV胶做过敏测试；</li>
+                                   <li><b>前提2：</b>我们提供“过敏原库材料表”给供应商确认是否有，如果有，要吱声并说明大概比例；</li>
+                                   <li><b>前提3：</b>从“使用方法+致敏物残留+接触面积”，对于做过敏测试，我们建议的品类优先级：底胶类＞中间色胶类＞表面封层类；</li>
+                                   <li><b>前提4：</b>开发需要考虑“产品等级+品类属性（参考前提3）+时间紧急程度”等因素，选择是否要做过敏性测试；</li>
+                               </ul>
+                               <p class="font-bold pt-2">推进顺序：先做 功能&相容性测试、消费者测试，再做过敏测试（尽量有2个配方作为比对）。</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">五．做过敏性测试，也不一定能发现过敏问题，难度在哪里？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                               <ul class="list-disc list-inside space-y-2">
+                                   <li>有可能会出现假阳性：例如测试人免疫力较弱，一点刺激都受不了；</li>
+                                   <li>有可能会出现假阴性：例如测试人的免疫力强，没发现</li>
+                                   <li>有可能会出现滞后性：即不是立即发生、是延后发生，反复或长期接触后发生的，一次性测试并不总是显示风险；</li>
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">六．什么类型的客户要特别注意？</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                               <ul class="list-disc list-inside space-y-2">
+                                   <li>反应或敏感史：尤其是对HEMA、丙烯酸酯或单体；</li>
+                                   <li>过去的轻微反应—美甲服务后瘙痒、发红或不适；首次使用UV产品的客户；</li>
+                                   <li>皮肤病—患有湿疹、银屑病或皮炎的患者可能反应性更强；</li>
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">七．关于低过敏的保守说法，如何管理客户期待的话术：</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                               <ul class="list-disc list-inside space-y-2">
+                                   <li><b>【一定要降低客户预期】：</b>我们低过敏产品主要用于预防过敏、而不是解决过敏，没有一家公司能保证产品100%不过敏；</li>
+                                   <li><b>【提供过敏原因解释】：</b>这些产品是否对您有帮助、您对哪些成分过敏，主要取决于你的基因以及您当下所处的环境，因为会显著影响您免疫系统的敏感度；</li>
+                                   <li><b>【频繁换品牌的后果】：</b>有些人对其他品牌产品过敏，不断更换品牌，有可能会导致对更多的成分过敏，免疫系统变得更敏感，这种情况，低过敏的产品也无补于事；</li>
+                                   <li><b>【如何知道对啥过敏】：</b> 如果您怀疑自己可能存在过敏，我们建议您去看皮肤科医生，进行甲基丙烯酸酯斑贴测试。这将有助于了解您对哪些成分过敏，同时也可以反映出你的免疫系统目前的敏感程度；</li>
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="card">
+                        <button class="accordion-header w-full text-left p-4 flex justify-between items-center">
+                            <span class="font-bold text-lg text-orange-600">八．可以写在页面/产品说明书/外盒上的一些说明建议：</span>
+                            <svg class="accordion-arrow w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 border-t text-gray-700 space-y-2">
+                               <ul class="list-disc list-inside space-y-2">
+                                   <li><b>提醒类：</b>“针对个别肤质，产品可能会引起过敏”；“请先进行皮肤测试”、“请勿在破损或受感染的皮肤上使用”；</li>
+                                   <li><b>解决方案类：</b>“如出现不适，请立即清洗并咨询医生”；</li>
+                               </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1218,14 +1395,26 @@
                     const content = this.nextElementSibling;
                     const arrow = this.querySelector('.accordion-arrow');
 
-                    // Toggle current accordion
-                    if (content.style.display === 'block') {
-                        content.style.display = 'none';
-                        if(arrow) arrow.classList.remove('rotate-180');
+                    const isOpening = content.style.display !== 'block';
 
-                    } else {
+                    // If this accordion is NOT inside another accordion content, close all others
+                    if (!this.closest('.accordion-content')) {
+                         document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+                            const otherContent = otherHeader.nextElementSibling;
+                            const otherArrow = otherHeader.querySelector('.accordion-arrow');
+                            if(otherHeader !== this && !otherHeader.parentElement.contains(this)) {
+                                otherContent.style.display = 'none';
+                                if(otherArrow) otherArrow.classList.remove('rotate-180');
+                            }
+                        });
+                    }
+                    
+                    if (isOpening) {
                         content.style.display = 'block';
                         if(arrow) arrow.classList.add('rotate-180');
+                    } else {
+                        content.style.display = 'none';
+                         if(arrow) arrow.classList.remove('rotate-180');
                     }
                 });
             });
@@ -1234,8 +1423,4 @@
 
 </body>
 </html>
-
-
-
-
 
